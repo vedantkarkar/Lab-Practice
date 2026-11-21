@@ -93,7 +93,7 @@ public:
         {
             if (arr[i] == key)
             {
-                count = i * 2;
+                count = (i + 1) * 2;
                 return i;
             }
         }
@@ -119,7 +119,7 @@ public:
         {
             i++;
         }
-        count = i;
+        count = i + 1;
 
         // restore the array
         arr[total_size - 1] = last;
@@ -216,7 +216,7 @@ public:
                 fibm2 = fibm - fibm1;
             }
         }
-
+        count++; // for final condition check
         if (fibm1 && offset + 1 < total_size && arr[offset + 1] == key)
         {
             return offset + 1;
@@ -226,7 +226,7 @@ public:
 
     void input(int n)
     {
-        if (n <= 0 || n > capacity)
+        if (n < 0 || n > capacity)
         {
             cerr << "Error: Input size is not valid!\n";
             return;
